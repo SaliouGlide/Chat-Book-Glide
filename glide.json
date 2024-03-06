@@ -14,6 +14,11 @@
         "name": "content",
         "displayName": "Content Message",
         "type": "string"
+      },
+      {
+        "name": "checkRep",
+        "displayName": "Check Réponse",
+        "type": "string"
       }
     ],
     "result": {
