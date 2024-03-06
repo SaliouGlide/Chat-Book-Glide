@@ -1,4 +1,6 @@
 window.function = async function(src, ctnt) {
+  src = src ?? "src_thL0VGXcR0Azj97QAs8vI";
+  ctnt = ctnt ?? "quel est le titre ?"
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://api.chatpdf.com/v1/chats/message');
@@ -19,10 +21,10 @@ window.function = async function(src, ctnt) {
       reject(new Error('Erreur réseau lors de la requête'));
     };
     const data = JSON.stringify({
-      sourceId: src.value,
+      sourceId: src,
       messages: [{
         role: 'user',
-        content: ctnt.value
+        content: ctnt
       }]
     });
     xhr.send(data);
