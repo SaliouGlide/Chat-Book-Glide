@@ -1,20 +1,29 @@
-// The function here takes the parameters that you
-// have declared in the `glide.json` file, in the
-// same order.
-window.function = function (str, start, end) {
-  // For each parameter, its `.value` contains
-  // either its value in the type you've declared,
-  // or it's `undefined`.  This is a good place to
-  // extract the `.value`s and assign default
-  // values.
-  str = str.value ?? "";
-  start = start.value ?? 0;
-  end = end.value;
-
-  // Your function should return the exact type
-  // you've declared for the `result` in
-  // `glide.json`, or `undefined` if there's an
-  // error or no result can be produced, because a
-  // required input is `undefined`, for example.
-  return str.substring(start, end);
+async function fetchMessage(sourceId, content) {
+  sourceId = sourceId.value ?? "";
+  content = content.value ?? "";
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://api.chatpdf.com/v1/chats/message');
+        xhr.setRequestHeader('x-api-key', 'sec_oVR5DxgcOAjbB4eFwiObjHtzH1U9IpiB');
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(JSON.parse(xhr.responseText));
+            } else {
+                reject(new Error('impossible'));
+            }
+        };
+        xhr.onerror = function () {
+            reject(new Error('impossible'));
+        };
+        const data = JSON.stringify({
+            sourceId: sourceId,
+            messages: [{
+                role: 'user',
+                content: content
+            }]
+        });
+        xhr.send(data);
+    });
 }
