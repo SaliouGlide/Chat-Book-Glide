@@ -1,8 +1,7 @@
 window.function = async function(src, ctnt) {
   src = src.value ?? "";
   ctnt = ctnt.value ?? "";
-  return src + ctnt;
-  
+    
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://api.chatpdf.com/v1/chats/message');
