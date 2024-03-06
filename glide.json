@@ -19,6 +19,11 @@
         "name": "checkRep",
         "displayName": "Check Réponse",
         "type": "string"
+      },
+      {
+        "name": "role",
+        "displayName": "Role",
+        "type": "string"
       }
     ],
     "result": {
