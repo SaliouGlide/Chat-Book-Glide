@@ -1,7 +1,7 @@
 window.function = async function(src, ctnt) {
   // Assurez-vous que src et ctnt ont des valeurs par défaut appropriées
-  src = src ?? "";
-  ctnt = ctnt ?? "";
+  src = src.value ?? "";
+  ctnt = ctnt.value ?? "";
 
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
