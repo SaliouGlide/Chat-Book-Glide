@@ -18,10 +18,10 @@ window.function = async function(src, ctnt) {
             reject(new Error('impossible'));
         };
         const data = JSON.stringify({
-            sourceId: 'src_thL0VGXcR0Azj97QAs8vI',
+            sourceId: src,
             messages: [{
                 role: 'user',
-                content: 'quel est le tite ?'
+                content: ctnt
             }]
         });
         xhr.send(data);
