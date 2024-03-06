@@ -9,7 +9,7 @@ window.function = async function(src, ctnt) {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 300) {
-        resolve(JSON.parse(xhr.responseText));
+        resolve(xhr.responseText);
       } else {
         // Gérez les erreurs côté serveur et renvoyez-les comme message d'erreur
         const errorMessage = xhr.statusText || 'Erreur lors de la requête';
