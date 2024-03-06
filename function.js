@@ -1,7 +1,6 @@
 window.function = async function(src, ctnt) {
   src = src.value ?? "";
   ctnt = ctnt.value ?? "";
-  return xhr.status;
   
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -32,3 +31,4 @@ window.function = async function(src, ctnt) {
     xhr.send(data);
   });
 };
+return xhr.status;
