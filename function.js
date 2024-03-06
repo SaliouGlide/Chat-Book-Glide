@@ -1,10 +1,11 @@
-window.function = async function(src, ctnt, checkRep) {
+window.function = async function(src, ctnt, checkRep, role) {
   src = src.value ?? "";
   ctnt = ctnt.value ?? "";
   checkRep = checkRep.value ?? "";
+  role = role.value ?? "";
   
-  // Vérifier si la colonne Réponse est vide
-  if (checkRep === "") {
+  // Vérifier si la colonne Réponse est vide et si le rôle est 'user'
+  if (checkRep === "" && role === "user") {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://api.chatpdf.com/v1/chats/message');
@@ -33,8 +34,8 @@ window.function = async function(src, ctnt, checkRep) {
       xhr.send(data);
     });
   } else {
-    // Colonne réponse non vide, renvoyer une réponse déjà envoyée
-    return 'Réponse déjà envoyé';
+    // Colonne réponse non vide ou rôle différent de 'user', renvoyer une réponse déjà envoyée
+    return 'Réponse déjà envoyée';
     return new Promise((resolve, reject) => {
       reject(new Error('Réponse déjà envoyée'));
     });
