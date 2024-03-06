@@ -1,6 +1,6 @@
-window.function = async function(sourceId, content) {
-  sourceId = sourceId.value ?? "";
-  content = content.value ?? "";
+window.function = async function(src, ctnt) {
+  src = src.value ?? "";
+  ctnt = ctnt.value ?? "";
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://api.chatpdf.com/v1/chats/message');
@@ -18,10 +18,10 @@ window.function = async function(sourceId, content) {
             reject(new Error('impossible'));
         };
         const data = JSON.stringify({
-            sourceId: sourceId,
+            sourceId: src,
             messages: [{
                 role: 'user',
-                content: content
+                content: ctnt
             }]
         });
         xhr.send(data);
