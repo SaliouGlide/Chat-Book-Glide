@@ -1,6 +1,6 @@
 window.function = async function(src, ctnt) {
-  src = src ?? "";
-  ctnt = ctnt ?? "";
+  src = src.value ?? "";
+  ctnt = ctnt.value ?? "";
   return src;
   
   return new Promise((resolve, reject) => {
