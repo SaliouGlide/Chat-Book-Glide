@@ -34,6 +34,7 @@ window.function = async function(src, ctnt, checkRep) {
     });
   } else {
     // Colonne réponse non vide, renvoyer une réponse déjà envoyée
+    return "Réponse déjà envoyé";
     return new Promise((resolve, reject) => {
       reject(new Error('Réponse déjà envoyée'));
     });
