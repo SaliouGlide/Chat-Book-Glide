@@ -1,6 +1,7 @@
 window.function = async function(src, ctnt, CheckRep) {
   src = src.value ?? "";
   ctnt = ctnt.value ?? "";
+  CheckRep = CheckRep.value ?? "";
   
   // Vérifier si la colonne Réponse est vide
   if (CheckRep === "") {
