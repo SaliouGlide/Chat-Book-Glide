@@ -1,4 +1,4 @@
-async function fetchMessage(sourceId, content) {
+window.function = async function(sourceId, content) {
   sourceId = sourceId.value ?? "";
   content = content.value ?? "";
     return new Promise((resolve, reject) => {
@@ -26,4 +26,4 @@ async function fetchMessage(sourceId, content) {
         });
         xhr.send(data);
     });
-}
+};
