@@ -11,7 +11,7 @@ window.function = async function(src, ctnt) {
             if (xhr.status >= 200 && xhr.status < 300) {
                 resolve(JSON.parse(xhr.responseText));
             } else {
-                reject(new Error('impossible'));
+                reject(new Error('impossible, valeur entrée non reçu'));
             }
         };
         xhr.onerror = function () {
