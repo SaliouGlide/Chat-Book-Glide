@@ -1,10 +1,10 @@
-window.function = async function(src, ctnt, CheckRep) {
+window.function = async function(src, ctnt, CheckRepo) {
   src = src.value ?? "";
   ctnt = ctnt.value ?? "";
-  CheckRep = CheckRep.value ?? "";
+  CheckRepo = CheckRepo.value ?? "";
   
   // Vérifier si la colonne Réponse est vide
-  if (CheckRep === "") {
+  if (CheckRepo === "") {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://api.chatpdf.com/v1/chats/message');
