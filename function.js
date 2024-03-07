@@ -9,7 +9,7 @@ window.function = async function(src, ctnt, checkRep, role) {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://api.chatpdf.com/v1/chats/message');
-      xhr.setRequestHeader('x-api-key', 'sec_oVR5DxgcOAjbB4eFwiObjHtzH1U9IpiB');
+      xhr.setRequestHeader('x-api-key', 'sec_orx66UDiflDtBdPUsKtpfb1IDebY9aS3');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onload = function () {
         if (xhr.status >= 200 && xhr.status < 300) {
