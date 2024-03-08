@@ -25,7 +25,6 @@ window.function = async function(src, ctnt, checkRep, role) {
         reject(new Error('Erreur réseau lors de la requête'));
       };
       const data = JSON.stringify({
-        referenceSources: true,
         sourceId: src,
         messages: [{
           role: 'user',
